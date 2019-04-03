@@ -8,9 +8,9 @@ const Friends = props => {
       {props.friends.map(friend => (
         <div key={friend.id}>
           <h1>{friend.name}</h1>
-          <h3>{friend.age}</h3>
-          <h3>{friend.email}</h3>
-          <h3>{friend.occupation}</h3>
+          <h3>age: {friend.age}</h3>
+          <h3>email: {friend.email}</h3>
+          <h3>occupation: {friend.occupation}</h3>
         </div>
       ))}
     </div>

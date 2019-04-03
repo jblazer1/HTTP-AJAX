@@ -4,6 +4,7 @@ import "./App.css";
 import axios from "axios";
 
 import Friends from "./components/Friends";
+import PostFriendForm from "./components/PostFriendForm";
 
 class App extends Component {
   constructor() {
@@ -22,9 +23,15 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   }
+
+  postFriend = friend => {
+    axios.post("http://localhost:5000/friends");
+  };
+
   render() {
     return (
       <div className="App">
+        <PostFriendForm postFriend={this.postFriend} />
         <Friends friends={this.state.friends} />
       </div>
     );
