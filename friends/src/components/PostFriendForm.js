@@ -15,8 +15,10 @@ class PostFriendForm extends React.Component {
 
   handleChange = event => {
     this.setState({
-      ...this.state.friend,
-      [event.target.name]: event.target.value
+      friend: {
+        ...this.state.friend,
+        [event.target.name]: event.target.value
+      }
     });
   };
 
@@ -32,7 +34,7 @@ class PostFriendForm extends React.Component {
         <form onSubmit={this.postFriend}>
           <input
             type="text"
-            name="friend"
+            name="name"
             placeholder="Friend Name"
             onChange={this.handleChange}
             value={this.state.friend.name}

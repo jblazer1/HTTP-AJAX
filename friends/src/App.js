@@ -25,7 +25,14 @@ class App extends Component {
   }
 
   postFriend = friend => {
-    axios.post("http://localhost:5000/friends");
+    axios
+      .post("http://localhost:5000/friends", friend)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {
