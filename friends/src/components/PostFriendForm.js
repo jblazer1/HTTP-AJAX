@@ -25,6 +25,14 @@ class PostFriendForm extends React.Component {
   postFriend = event => {
     event.preventDefault();
     this.props.postFriend(this.state.friend);
+    this.setState({
+      friend: {
+        age: "",
+        name: "",
+        email: "",
+        occupation: ""
+      }
+    });
   };
 
   render() {
